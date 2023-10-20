@@ -119,29 +119,15 @@ const technologies = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+      "I thought it was impossible to make a website as beautiful as our product, but Rohith proved me wrong.",
+    name: "",
+    designation: "",
+    company: "",
+    image: "",
   },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
+ 
 ];
+
 
 const experiences = [
   {
@@ -158,7 +144,7 @@ const experiences = [
   },
   {
     title: "Full Stack Developer",
-    company_name: "Tech Solutions Inc",
+    company_name: "",
     //icon: 
     iconBg: "#E6DEDD",
     date: "Jan 2021 - Feb 2022",
@@ -170,7 +156,7 @@ const experiences = [
   },
   {
     title: "Data Scientist",
-    company_name: "Data Insights Co",
+    company_name: "",
     // icon : 
     iconBg: "#383E56",
     date: "Jan 2022 - Jan 2023",
@@ -182,7 +168,7 @@ const experiences = [
   },
   {
     title: "Full Stack JavaScript Developer",
-    company_name: "YourTech Startup",
+    company_name: "",
   //icon : 
     iconBg: "#E6DEDD",
     date: "Jan 2023 - Present",
@@ -194,70 +180,34 @@ const experiences = [
   },
 ];
 
-
 const projects = [
   {
-    name: "Car Rent",
-    description: "Web-based platform for car rentals.",
+    name: "Spotify UI Clone",
+    description: "A responsive web application that mimics the user interface of the Spotify music streaming platform. It's built using HTML, CSS, and JavaScript to replicate the look and feel of the Spotify application, allowing users to browse and play music.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
+      { name: "HTML", color: "orange" },
+      { name: "CSS", color: "blue" },
+      { name: "JavaScript", color: "yellow" },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/your-username/car-rent", // Replace with your GitHub project link
+    image: "image-link-for-spotify-ui",
+    source_code_link: "https://github.com/rohithIlluri/spotify-UI",
   },
   {
-    name: "Job IT",
-    description: "Web application for job search and salary estimates.",
+    name: "Crypto Price Tracker",
+    description: "A cryptocurrency price tracking web application that provides real-time data on various cryptocurrencies. Users can monitor cryptocurrency prices, view historical data, and stay informed about the latest trends in the crypto market.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      { name: "React", color: "blue" },
+      { name: "Node.js", color: "green" },
+      { name: "CryptoAPI", color: "yellow" },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/your-username/job-it", // Replace with your GitHub project link
+    image: "image-link-for-cryptoapp",
+    source_code_link: "https://github.com/rohithIlluri/cryptoapp",
   },
-  {
-    name: "Trip Guide",
-    description: "Travel booking platform with recommendations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/your-username/trip-guide", // Replace with your GitHub project link
-  },
+  // Add more projects as needed
 ];
 
 
 
-export { services, technologies, experiences, testimonials, projects };
+
+
+export { services, technologies, experiences,testimonials, projects };
