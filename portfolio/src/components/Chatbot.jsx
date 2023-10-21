@@ -26,7 +26,7 @@ class Chatbot extends Component {
   };
 
   getBotResponse = async (userMessage) => {
-    const GPT3_API_KEY = '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'; // Replace with your actual GPT-3 API key
+    const GPT3_API_KEY = '_api_key'; // Replace with your actual GPT-3 API key
 
     try {
       const response = await axios.post('https://api.openai.com/v1/engines/davinci/completions', {
