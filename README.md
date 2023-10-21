@@ -20,21 +20,21 @@ You can view the live version of this portfolio at #notliveyet .
 
 To run this project locally, follow these steps:
 
-1. Clone the repository.
+#Clone the repository.
 
    ```bash
    git clone https://github.com/rohithIlluri/DailyCode.git
 
 
-2.Change directory to project folder
+#Change directory to project folder
 cd portfolio
 
-3. Install the required dependencies.
+#Install the required dependencies.
 npm install
-Start the development server.
 
-4.Start the development server 
-npm start
+
+#Start the development server 
+npm run dev 
 
 
 
