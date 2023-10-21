@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Chatbot extends Component {
   state = {
@@ -10,25 +11,37 @@ class Chatbot extends Component {
     this.setState({ userMessage: e.target.value });
   };
 
-  handleKeyPress = (e) => {
+  handleKeyPress = async (e) => {
     if (e.key === 'Enter') {
       const userMessage = this.state.userMessage;
       this.addMessage(userMessage, true);
 
-      const botResponse = this.getBotResponse(userMessage);
+      // Request AI response from the API
+      const botResponse = await this.getBotResponse(userMessage);
       this.addMessage(botResponse, false);
 
+      // Clear the user input field
       this.setState({ userMessage: '' });
     }
-  }
+  };
 
-  getBotResponse = (userMessage) => {
-    if (userMessage.toLowerCase().includes('hello') || userMessage.toLowerCase().includes('hi')) {
-      return "Hello! How can I assist you today?";
-    } else if (userMessage.toLowerCase().includes('how are you')) {
-      return "I'm just a chatbot, but thanks for asking! How can I help you?";
-    } else {
-      return "I'm just a simple greeting bot. Try asking something else!";
+  getBotResponse = async (userMessage) => {
+    const GPT3_API_KEY = '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'; // Replace with your actual GPT-3 API key
+
+    try {
+      const response = await axios.post('https://api.openai.com/v1/engines/davinci/completions', {
+        prompt: userMessage,
+        max_tokens: 50,
+      }, {
+        headers: {
+          'Authorization': `Bearer ${GPT3_API_KEY}`,
+        },
+      });
+
+      return response.data.choices[0].text;
+    } catch (error) {
+      console.error(error);
+      return "An error occurred while fetching the response.";
     }
   }
 
@@ -40,12 +53,12 @@ class Chatbot extends Component {
 
   render() {
     return (
-      <div className="fixed bottom-10 right-10 bg-black text-white rounded-lg p-4 shadow-md max-w-xs">
+      <div className="fixed bottom-10 right-10 bg-gradient-to-br from-[#1d1836] to-[#232631] text-tertiary-gradient rounded-lg p-4 shadow-md max-w-xs">
         <div className="chatlogs">
           {this.state.chatHistory.map((message, index) => (
             <div
               key={index}
-              className={`p-2 rounded-md ${message.isUser ? 'bg-blue-500' : 'bg-blue-700'}`}
+              className={`p-2 rounded-md ${message.isUser ? 'bg-secondary-gradient' : 'bg-tertiary-gradient'}`}
             >
               {message.text}
             </div>
@@ -57,7 +70,14 @@ class Chatbot extends Component {
           value={this.state.userMessage}
           onChange={this.handleInputChange}
           onKeyPress={this.handleKeyPress}
-          className="bg-blue-500 text-white p-2 w-full outline-none rounded-md"
+          style={{
+            background: "var(--secondary-gradient)",
+            color: "var(--tertiary-gradient)",
+            padding: "2px",
+            width: "100%",
+            outline: "none",
+            borderRadius: "8px",
+          }}
         />
       </div>
     );

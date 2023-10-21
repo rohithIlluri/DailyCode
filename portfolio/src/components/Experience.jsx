@@ -16,12 +16,12 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
+        background: "var(--secondary-gradient)", // Change background color
+        color: "var(--tertiary-color)", // Change text color
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "7px solid  var(--secondary-gradient)" }} // Change arrow color
       date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
+      iconStyle={{ background: "var(--tertiary-gradient)" }} // Change icon background color
       icon={
         <div className='flex justify-center items-center w-full h-full'>
           <img
@@ -33,9 +33,9 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
+        <h3 className='text-white font-bold text-[24px]'>{experience.title}</h3>
         <p
-          className='text-secondary text-[16px] font-semibold'
+          className='text-tertiary text-[16px] font-semibold' // Change text color
           style={{ margin: 0 }}
         >
           {experience.company_name}

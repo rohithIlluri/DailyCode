@@ -43,8 +43,10 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
-          <p className='text-var(--text-color) text-[18px] font-bold cursor-pointer flex '>
-            Rohith Illuri&nbsp;
+          <p className='text-var(--text-color) text-[18px] font-bold cursor-pointer flex'>
+            <span style={{ background: "linear-gradient(135deg, #FFD700, #FF5733)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              Rohith Illuri
+            </span>
             <span className='sm:block hidden'>{/* My role */}</span>
           </p>
         </Link>
