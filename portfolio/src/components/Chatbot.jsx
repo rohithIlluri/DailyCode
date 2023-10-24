@@ -27,7 +27,7 @@ class Chatbot extends Component {
 
   getBotResponseWithRetry = async (userMessage, retryCount = 0) => {
     // Replace 'YOUR_API_KEY' with your actual GPT-3 API key
-    const GPT3_API_KEY = '';
+    const GPT3_API_KEY = 'GPT3_API_KEY';
 
     try {
       const response = await axios.post('https://api.openai.com/v1/engines/davinci/completions', {
