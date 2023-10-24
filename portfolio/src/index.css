@@ -86,3 +86,17 @@
 /* You can add more styles as needed */
 
 /* Update other styles or animations if required */
+/* Define a rotation animation called loader-rotate */
+@keyframes loader-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply the animation to the loader-rotate class */
+.loader-rotate {
+  animation: loader-rotate 2s linear infinite;
+}
