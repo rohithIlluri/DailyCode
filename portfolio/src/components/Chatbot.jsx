@@ -17,7 +17,7 @@ class Chatbot extends Component {
       this.addMessage(userMessage, true);
 
       // Request AI response from the API
-      const botResponse = await this.getBotResponse(userMessage);
+      const botResponse = await this.getBotResponseWithRetry(userMessage);
       this.addMessage(botResponse, false);
 
       // Clear the user input field
@@ -25,8 +25,9 @@ class Chatbot extends Component {
     }
   };
 
-  getBotResponse = async (userMessage) => {
-    const GPT3_API_KEY = '_api_key'; // Replace with your actual GPT-3 API key
+  getBotResponseWithRetry = async (userMessage, retryCount = 0) => {
+    // Replace 'YOUR_API_KEY' with your actual GPT-3 API key
+    const GPT3_API_KEY = '';
 
     try {
       const response = await axios.post('https://api.openai.com/v1/engines/davinci/completions', {
@@ -40,8 +41,14 @@ class Chatbot extends Component {
 
       return response.data.choices[0].text;
     } catch (error) {
-      console.error(error);
-      return "An error occurred while fetching the response.";
+      if (error.response && error.response.status === 429 && retryCount < 3) {
+        const retryAfter = error.response.headers['Retry-After'] || 1;
+        await new Promise((resolve) => setTimeout(resolve, retryAfter * 1000));
+        return this.getBotResponseWithRetry(userMessage, retryCount + 1);
+      } else {
+        console.error(error);
+        return "An error occurred while fetching the response.";
+      }
     }
   }
 
