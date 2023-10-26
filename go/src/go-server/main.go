@@ -7,41 +7,100 @@ import (
 	"strings"
 )
 
-const (
-	myAge    = 30
-	myName   = "Alice"
-	constVal = 42
-)
+func updateName(x string) string {
 
-func getInitials(n string) (string, string) {
-	s := strings.ToUpper(n)
-	names := strings.Split(s, " ")
+	x = "wedge"
+	return x
+}
 
-	var initials []string
-	for _, v := range names {
-		initials = append(initials, v[:1])
+func updateMenu(y map[string]float64) {
+	y["coffee"] = 2.99
+}
+
+func main() {
+
+	name := "mick"
+
+	name = updateName(name)
+	fmt.Println("The value of the variable is: ", name) // This will print mick, not wedge as expected
+
+	menu := map[string]float64{
+		"soup":           4.99,
+		"pie":            7.99,
+		"salad":          6.99,
+		"toffee pudding": 3.55,
 	}
 
-	if len(initials) > 1 {
-		return initials[0], initials[1]
+	updateMenu(menu)
+	fmt.Println(menu)
+
+	fmt.Println(menu)
+	fmt.Println(menu["pie"])
+
+	//looping maps
+	for k, v := range menu {
+		fmt.Println(k, "-", v)
 	}
 
-	return initials[0], "_"
-}
-
-func sayGreeting(n string) {
-	fmt.Printf("Good morning, %v!\n", n)
-}
-
-func sayBye(n string) {
-	fmt.Printf("Goodbye, %v!\n", n)
-}
-
-func cycleNames(n []string, f func(string)) {
-	for _, v := range n {
-		f(v)
+	//ints as key type
+	phonebook := map[int]string{
+		1234567890: "alice",
+		987654321:  "bob",
 	}
+
+	fmt.Println(phonebook)
+	fmt.Println(phonebook[1234567890])
+
+	phonebook[987654321] = "mask"
+	fmt.Println(phonebook)
+
+	phonebook[1234567890] = "kaske"
+	fmt.Println(phonebook)
+
+	sayHello("wednesday")
+
+	for _, v := range points {
+		fmt.Println(v)
+	}
+
+	showScore()
 }
+
+// const (
+// 	myAge    = 30
+// 	myName   = "Alice"
+// 	constVal = 42
+// )
+
+// func getInitials(n string) (string, string) {
+// 	s := strings.ToUpper(n)
+// 	names := strings.Split(s, " ")
+
+// 	var initials []string
+// 	for _, v := range names {
+// 		initials = append(initials, v[:1])
+// 	}
+
+// 	if len(initials) > 1 {
+// 		return initials[0], initials[1]
+// 	}
+
+// 	return initials[0], "_"
+// }
+
+// func sayGreeting(n string) {
+// 	fmt.Printf("Good morning, %v!\n", n)
+// }
+
+// func sayBye(n string) {
+// 	fmt.Printf("Goodbye, %v!\n", n)
+// }
+
+// func cycleNames(n []string, f func(string)) {
+// 	for _, v := range n {
+// 		f(v)
+// 	}
+// }
 
 func circleArea(r float64) float64 {
 	return math.Pi * r * r
