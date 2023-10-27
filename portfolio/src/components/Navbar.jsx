@@ -62,9 +62,7 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
-          <li className="hover:text-var(--tertiary-color) text-secondary text-[18px] font-medium cursor-pointer">
-            <Link to="/blog" style={{ marginLeft: "10px" }}>Blog</Link> {/* Link to the Blog component with spacing */}
-          </li>
+          
         </ul>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
@@ -95,9 +93,7 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
-              <li className="font-poppins font-medium cursor-pointer text-[16px] text-secondary">
-                <Link style={{ marginLeft: "10px" }}>Blog</Link> {/* Link to the Blog component with spacing */}
-              </li>
+              
             </ul>
           </div>
         </div>
