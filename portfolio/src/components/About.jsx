@@ -73,8 +73,6 @@ const Resume = () => {
 >
   Experienced Graduate committed to maintaining cutting-edge technical skills and up-to-date industry knowledge. I am a Machine learning researcher, Full Stack Developer known for being results-driven with experience in designing, building, and maintaining data processing systems.
 </motion.p>
-
-
       <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
