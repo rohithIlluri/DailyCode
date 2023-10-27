@@ -9,6 +9,7 @@ import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import Chatbot from './Chatbot';
+import Blog from './Blog';
 
 
 export {
@@ -26,4 +27,5 @@ export {
   ComputersCanvas, 
   StarsCanvas,
   Chatbot,
+  Blog,
 };
