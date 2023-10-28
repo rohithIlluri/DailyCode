@@ -28,6 +28,31 @@
   scroll-behavior: smooth;
   color-scheme: dark;
 }
+.first-paragraph {
+  background: linear-gradient(135deg, #FFD700, #FF5733);
+  WebkitBackgroundClip: text;
+  WebkitTextFillColor: transparent;
+  opacity: 0.85; /* Make it brighter */
+  animation: fadeIn 1s;
+  fontFamily: Arial, sans-serif;
+  fontSize: 24px;
+  fontWeight: bold;
+  textShadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s, font-size 0.3s, transform 0.3s;
+}
+
+.second-paragraph {
+  background: linear-gradient(135deg, #FF5733, #FFD700); /* Different gradient */
+  WebkitBackgroundClip: text;
+  WebkitTextFillColor: transparent;
+  opacity: 0.85; /* Make it brighter */
+  animation: fadeIn 1s;
+  fontFamily: "Poppins", sans-serif; /* Different font family */
+  fontSize: 26px; /* Slightly larger font size */
+  fontWeight: 600; /* Bolder font weight */
+  textShadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s, font-size 0.3s, transform 0.3s;
+}
 
 .hash-span {
   margin-top: -100px;
@@ -45,6 +70,9 @@
   opacity: 0.7; /* Adjust the opacity for translucency */
   z-index: -1; /* Behind the content */
 }
+ 
+
+
 
 /* Update background colors using the new palette */
 .black-gradient {
@@ -81,6 +109,37 @@
 /* Style for rounded elements with the new color palette */
 .rounded-bg {
   background: var(--transparent-bg-color);
+}
+h1 span.text-tertiary:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 30%, rgba(255, 255, 255, 0.4) 70%);
+  background-size: 200% 200%;
+  background-position: center;
+  animation: spotlight 1s forwards;
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes spotlight {
+  to {
+    background-size: 250% 250%;
+  }
 }
 
 /* You can add more styles as needed */

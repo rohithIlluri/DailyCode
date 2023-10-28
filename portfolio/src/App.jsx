@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas,Chatbot } from "./components";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallback from "./ErrorFallback";
+import { RocketCanvas } from "./components/canvas";
 
 const App = () => {
   return (
@@ -19,8 +22,11 @@ const App = () => {
         <Tech />
         <Works />
         <Feedbacks />
+        {/* <RocketCanvas/> */}
         <div className="relative z-0">
           <Contact />
+        
+          
           {/*<Chatbot/>*/}
         </div>
       </div>

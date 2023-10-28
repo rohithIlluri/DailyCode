@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import { RocketCanvas } from "./canvas";
 
 const Contact = () => {
   const formRef = useRef();
@@ -156,6 +157,7 @@ const Contact = () => {
         className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
       >
         <EarthCanvas />
+        {/* <RocketCanvas/> */}
       </motion.div>
     </div>
   );

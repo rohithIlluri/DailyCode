@@ -24,6 +24,9 @@ const styles = {
     boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
     maxWidth: "400px",
   },
+
+  
+  
   userMessage: {
     background: "var(--background-color)",
     color: "var(--text-color)",
