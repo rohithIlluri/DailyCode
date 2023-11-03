@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas,Chatbot } from "./components";
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, } from "./components";
 
 const App = () => {
   return (
@@ -23,7 +23,7 @@ const App = () => {
           <Contact />
         
           
-          {/*<Chatbot/>*/}
+          
         </div>
       </div>
     </BrowserRouter>
