@@ -130,18 +130,7 @@ const testimonials = [
 
 
 const experiences = [
-  {
-    title: "Machine Learning Researcher",
-    company_name: "ABC Research Labs",
-   // icon: abcIcon, // Replace with your company's icon image
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Conducted research in machine learning algorithms and techniques.",
-      "Collaborated with a team of data scientists to develop predictive models.",
-      "Published research papers and presented findings at conferences.",
-    ],
-  },
+ 
   {
     title: "Full Stack Developer",
     company_name: "",

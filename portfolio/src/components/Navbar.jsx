@@ -41,7 +41,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
+          <img src={logo} alt='logo' className='w-9 h-9 object-contain rounded-full'/>
           <p className='text-var(--text-color) text-[18px] font-bold cursor-pointer flex'>
             <span style={{ background: "linear-gradient(135deg, #FFD700, #FF5733)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
               Rohith Illuri
